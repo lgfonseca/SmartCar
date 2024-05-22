@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultados</h1>
+
+    <h2>{{ ModelCarro }}</h2>
+    <p>Adjusted MMR: {{ TAdjustedMMR }}</p>
+    <p>MMR Range: {{ TMMRRange }}</p>
+    <p>Estimated Retail Value: {{ TEstimatedRetailValue }}</p>
+    <p>Typical Range: {{ TTypicalRange1 }} - {{ TTypicalRange2 }}</p>
+    <p>Suggested Purchase Value: {{ Preco_Sugerido }}</p>
+    <p>AutoCheckScore: {{ TAutoCheckScore }}</p>
+    <p>AutoCheckScoreComparation: {{ TAutoCheckScoreComparation }}</p>
+    <p>Major State Title Brand Check: {{ TMajorStateTitleBrandCheck }}</p>
+    <p>Acidente Check: {{ TAcidenteCheck }}</p>
+    <p>Damage Check: {{ TDamageCheck }}</p>
+    <p>CarGurus Instant Market Value™: {{ TValueGurus }}</p>
+
+    <h2>Filtered DataFrame</h2>
+    {{ FilteredDataFrame | safe }}
+
+    <br><br>
+    <button onclick="window.location.href='/'">New Search</button>
+
+</body>
+</html>

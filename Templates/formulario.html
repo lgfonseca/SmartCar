@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form action="/executar" method="post">
+        <label for="VIN">VIN:</label>
+        <input type="text" id="VIN" name="VIN"><br><br>
+
+        <label for="ODO">ODO:</label>
+        <input type="text" id="ODO" name="ODO"><br><br>
+
+        <label for="opcao_selecionada">Opção de Grade:</label>
+        <select id="opcao_selecionada" name="opcao_selecionada">
+            <option value="Grade**">10.0</option>
+            <option value="5.0">5.0</option>
+            <option value="4.5">4.5</option>
+            <option value="4.0">4.0</option>
+            <option value="3.5">3.5</option>
+            <option value="3.0">3.0</option>
+            <option value="2.5">2.5</option>
+            <option value="2.0">2.0</option>
+            <option value="1.5">1.5</option>
+            <option value="1.0">1.0</option>
+            <!-- Adicione mais opções conforme necessário -->
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
