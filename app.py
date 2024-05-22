@@ -25,9 +25,12 @@ def executar():
     opcao_selecionada = float(request.form.get('opcao_selecionada'))
 
     try:
+
+        chrome_driver_path = os.environ.get("./chromedriver")
+        servico = webdriver.Chrome(chrome_driver_path)      
         
-        chrome_driver_path = "./chromedriver"  # substitua pelo caminho correto
-        servico = webdriver.Chrome(executable_path=chrome_driver_path)
+        # chrome_driver_path = "./chromedriver"  # substitua pelo caminho correto
+        # servico = webdriver.Chrome(executable_path=chrome_driver_path)
         
         #servico = Service(ChromeDriverManager().install())
         navegador = webdriver.Chrome(service=servico)
