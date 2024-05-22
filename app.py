@@ -6,11 +6,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import time
 import os
 import pandas as pd
 import webbrowser
 import threading
+
+chrome_driver_path = ChromeDriverManager().install()
 
 app = Flask(__name__)
 
@@ -24,16 +27,23 @@ def executar():
     ODO = request.form.get('ODO')
     opcao_selecionada = float(request.form.get('opcao_selecionada'))
 
+
     try:
 
-        chrome_driver_path = os.environ.get("./chromedriver")
-        servico = webdriver.Chrome(chrome_driver_path)      
+
+        # Configura o Chrome para executar em modo headless
+        chrome_options = Options()
+        #chrome_options.add_argument('--headless')
+
+        # Inicializa o WebDriver com as opções configuradas
+        servico = webdriver.Chrome(chrome_driver_path, options=chrome_options)
+        
         
         # chrome_driver_path = "./chromedriver"  # substitua pelo caminho correto
         # servico = webdriver.Chrome(executable_path=chrome_driver_path)
         
         #servico = Service(ChromeDriverManager().install())
-        navegador = webdriver.Chrome(service=servico)
+        navegador = servico
         navegador.minimize_window()
         
 
